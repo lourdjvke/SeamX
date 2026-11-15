@@ -1,70 +1,47 @@
 
 // Top UI scroll effect
 const topUI = document.querySelector('.top-ui');
-const menuBtn = document.querySelector('.menu-btn');
-const closeBtn = document.querySelector('.close-btn');
-const mobileMenu = document.querySelector('.mobile-menu');
-const preloader = document.getElementById('preloader');
+const menuBtn = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.menu-sidebar');
+const siteWrap = document.querySelector('.site-wrap');
 
-// Preloader
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        preloader.classList.remove('active');
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 600);
-    }, 1500);
-});
-
-// Scroll effect for top UI
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        topUI.classList.add('scrolled');
-    } else {
-        topUI.classList.remove('scrolled');
-    }
+  topUI.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// Mobile menu toggle
-if (menuBtn && closeBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-
-    closeBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    });
+// Menu toggle
+if (menuBtn && sidebar) {
+  menuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    siteWrap.classList.toggle('menu-open');
+    document.body.classList.toggle('no-scroll');
+  });
 }
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-        // Close mobile menu if open
-        if (mobileMenu && mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
+// Close menu when clicking outside or on links
+document.addEventListener('click', (e) => {
+  if (sidebar && sidebar.classList.contains('open') && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+    sidebar.classList.remove('open');
+    siteWrap.classList.remove('menu-open');
+    document.body.classList.remove('no-scroll');
+  }
 });
 
-// Simple product hover / interaction placeholders
-document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.classList.add('hovered');
-    });
-    card.addEventListener('mouseleave', () => {
-        card.classList.remove('hovered');
-    });
+// Preloader
+const preloader = document.getElementById('preloader');
+if (preloader) {
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      setTimeout(() => preloader.remove(), 800);
+    }, 1200);
+  });
+}
+
+// Product interactions
+document.querySelectorAll('.product-item').forEach(item => {
+  item.addEventListener('mouseenter', () => item.classList.add('active'));
+  item.addEventListener('mouseleave', () => item.classList.remove('active'));
 });
 
-console.log('SeamX version_danny-v1 loaded');
+console.log('SeamX danny-v1 ready');
