@@ -1,0 +1,13 @@
+{
+  "name": "seamx-uk",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node serve.mjs",
+    "build": "node scripts/build-dist.mjs",
+    "deploy": "node scripts/build-dist.mjs && CLOUDFLARE_ACCOUNT_ID=317818d87c7927e9bc50053eaef1a859 wrangler pages deploy dist --project-name seamx-uk --commit-dirty=true"
+  },
+  "devDependencies": {
+    "wrangler": "^4.162.0"
+  }
+}
