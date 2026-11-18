@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Share</title>
 <style id="faces">
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap");
 *{box-sizing:border-box}
 html,body{margin:0;background:#000;color:#e7e9ea;font-family:Inter,Inter,"Segoe UI",sans-serif}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -17,9 +17,9 @@ button:active{scale:.96}
 .name{font-weight:700}
 .muted{color:#71767b}
 .body{margin:4px 0 0;white-space:pre-wrap;font-size:16px;line-height:1.45}
-.cash{color:#1d9bf0}
-.row{display:flex;justify-content:space-between;max-width:420px;margin-top:8px;color:#71767b}
-.row button{min-width:44px;min-height:44px;display:flex;align-items:center;gap:6px;font-size:13px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:4px;max-width:480px;color:#71767b}
+.row button,.metric{min-height:44px;display:flex;align-items:center;gap:6px;font-size:13px;color:#71767b;padding:0 2px}
+.row svg{display:block}
 .sheet-back,.view{position:fixed;inset:0;background:rgba(0,0,0,.72)}
 #sheet[hidden],#viewer[hidden]{display:none !important}
 #sheet{z-index:20}
@@ -36,7 +36,6 @@ button:active{scale:.96}
 .stage-wrap img.port{max-height:68dvh;width:auto;margin:0 auto}
 .actions{display:flex;justify-content:center;gap:12px;padding:8px 16px 20px}
 .dl{background:#1d9bf0;color:#fff;font-weight:700;border-radius:999px;padding:12px 20px}
-.ghost{border:1px solid #2f3336;border-radius:999px;padding:12px 20px;font-weight:700}
 #off{position:fixed;left:-20000px;top:0}
 </style>
 </head>
@@ -46,15 +45,14 @@ button:active{scale:.96}
   <article class="tweet">
     <div id="avatar"></div>
     <div style="min-width:0;flex:1">
-      <div class="meta"><span class="name">Unipcs</span><svg width="16" height="16" viewBox="0 0 24 24" aria-label="Verified"><path fill="#1d9bf0" d="M12 2l2.1 1.6 2.6-.3 1.1 2.4 2.4 1.1-.3 2.6L22 12l-1.6 2.1.3 2.6-2.4 1.1-1.1 2.4-2.6-.3L12 22l-2.1-1.6-2.6.3-1.1-2.4-2.4-1.1.3-2.6L2 12l1.6-2.1-.3-2.6 2.4-1.1 1.1-2.4 2.6.3L12 2z"/><path fill="#fff" d="M10.2 15.4l-2.7-2.6 1.2-1.2 1.5 1.5 4.1-4.2 1.2 1.2z"/></svg><span class="muted">@unipcs · 2h</span></div>
-      <p class="body">i keep buying the <span class="cash">$PONS</span> dip!
-thesis:
-#1 launchpad on Robinhood Chain consistently facilitating the launch of 10,000+ tokens daily. still early if you can actually read a tape.</p>
+      <div class="meta"><span class="name">Maya Chen</span><svg width="16" height="16" viewBox="0 0 24 24" aria-label="Verified"><path fill="#1d9bf0" d="M12 2l2.1 1.6 2.6-.3 1.1 2.4 2.4 1.1-.3 2.6L22 12l-1.6 2.1.3 2.6-2.4 1.1-1.1 2.4-2.6-.3L12 22l-2.1-1.6-2.6.3-1.1-2.4-2.4-1.1.3-2.6L2 12l1.6-2.1-.3-2.6 2.4-1.1 1.1-2.4 2.6.3L12 2z"/><path fill="#fff" d="M10.2 15.4l-2.7-2.6 1.2-1.2 1.5 1.5 4.1-4.2 1.2 1.2z"/></svg><span class="muted">@mayachen · 2h</span></div>
+      <p class="body">took the long way home tonight. the city looked unreal. windows lit, rain just starting, and nobody was in a hurry.</p>
       <div class="row">
-        <button type="button" aria-label="Reply">&#128172; 128</button>
-        <button type="button" aria-label="Repost">&#8635; 406</button>
-        <button type="button" aria-label="Like">&#9825; 2,901</button>
-        <button type="button" id="share">&#8599; Share</button>
+        <button type="button" aria-label="Replies"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>128</button>
+        <button type="button" aria-label="Reposts"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>406</button>
+        <button type="button" aria-label="Likes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>2,901</button>
+        <span class="metric" aria-label="Views"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>84.2K</span>
+        <button type="button" id="share" aria-label="Share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg></button>
       </div>
     </div>
   </article>
@@ -85,22 +83,30 @@ thesis:
 <div id="off"></div>
 <script>
 const FONT = '"Inter", Inter, "Segoe UI", sans-serif';
-const DISPLAY = '"Outfit", Outfit, Inter, sans-serif';
+const DISPLAY = '"Outfit", Outfit, sans-serif';
 const POST = {
-  name: "Unipcs", date: "Jul 17, 2025", badge: "Thesis", token: "PONS",
-  cardText: "i keep buying the $PONS dip!\nthesis:\n#1 launchpad on Robinhood Chain\nconsistently facilitating the launch\nof 10,000+ tokens daily...",
-  pnl: 4511019.93, pnlPct: 41164, invested: 68033.26, bought: 141700000, current: 150600000
+  name: "Maya Chen",
+  handle: "@mayachen",
+  date: "Jul 17, 2025",
+  cardText: "took the long way home tonight.\nthe city looked unreal.\nwindows lit, rain just starting,\nand nobody was in a hurry.",
+  replies: 128,
+  reposts: 406,
+  likes: 2901,
+  views: 84200
 };
 const FRAMES = { landscape: { w: 1200, h: 675, card: 372 }, portrait: { w: 1080, h: 1350, card: 860 } };
 const LAND = [{ size: 200, x: 64, y: 28, rotate: -22, rim: "bl" }, { size: 310, x: 960, y: 48, rotate: 14, rim: "bl" }, { size: 360, x: -120, y: 390, rotate: -14, rim: "br" }];
 const PORT = [{ size: 560, x: -230, y: -150, rotate: -18, rim: "bl" }, { size: 520, x: 800, y: -70, rotate: 16, rim: "br" }, { size: 600, x: -260, y: 960, rotate: -10, rim: "tr" }, { size: 480, x: 760, y: 980, rotate: 20, rim: "tl" }];
-const money = (n) => "$" + Math.abs(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-const signedMoney = (n) => (n > 0 ? "+" : n < 0 ? "-" : "") + money(n);
-const signedPct = (n) => (n > 0 ? "+" : n < 0 ? "-" : "") + Math.abs(Math.round(n)).toLocaleString("en-US") + "%";
-function mcap(n) {
-  const abs = Math.abs(n), div = abs >= 1e9 ? 1e9 : abs >= 1e6 ? 1e6 : 1e3;
-  const digits = abs / 1e6 >= 100 ? 1 : 2;
-  return "$" + (abs / div).toFixed(digits).replace(/\.?0+$/, "") + (abs >= 1e9 ? "B" : abs >= 1e6 ? "M" : "K");
+const ICONS = {
+  reply: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",
+  repost: "M17 2l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3",
+  like: "M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z",
+  views: "M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+};
+function compact(n) {
+  if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+  if (n >= 10000) return (n / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+  return n.toLocaleString("en-US");
 }
 function el(tag, style, text) {
   const n = document.createElement(tag);
@@ -115,83 +121,83 @@ function avatar(size) {
   s.innerHTML = '<circle cx="32" cy="32" r="32" fill="#F5C518"/><ellipse cx="32" cy="16" rx="22" ry="12" fill="#E09A00"/><circle cx="32" cy="36" r="16" fill="#F6D35A"/><circle cx="26" cy="35" r="2.4" fill="#161616"/><circle cx="38" cy="35" r="2.4" fill="#161616"/><path d="M27 43c2 3 8 3 10 0" stroke="#161616" stroke-width="1.8" fill="none" stroke-linecap="round"/>';
   return s;
 }
+function iconSvg(name, size, color) {
+  const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  s.setAttribute("width", size); s.setAttribute("height", size); s.setAttribute("viewBox", "0 0 24 24");
+  s.setAttribute("fill", "none");
+  s.setAttribute("stroke", color || "currentColor");
+  s.setAttribute("stroke-width", "1.8");
+  s.setAttribute("stroke-linecap", "round");
+  s.setAttribute("stroke-linejoin", "round");
+  s.innerHTML = "<path d=\"" + ICONS[name] + "\"/>";
+  return s;
+}
 function coin(size, rotate, rim, id) {
   const shift = { bl: [-9, 10], br: [9, 10], tl: [-8, -8], tr: [9, -7] }[rim];
   const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   s.setAttribute("width", size); s.setAttribute("height", size); s.setAttribute("viewBox", "0 0 200 200");
   s.setAttribute("style", "display:block;overflow:visible;transform:rotate(" + rotate + "deg)");
-  s.innerHTML = `<defs>
-      <radialGradient id="${id}f" cx="32%" cy="28%" r="78%"><stop offset="0%" stop-color="#8EB6FF"/><stop offset="46%" stop-color="#3E7BFF"/><stop offset="100%" stop-color="#2457EA"/></radialGradient>
-      <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#D5D9E8"/></linearGradient>
-    </defs>
-    <ellipse cx="104" cy="172" rx="58" ry="10" fill="rgba(18,28,100,0.28)"/>
-    <circle cx="${100 + shift[0]}" cy="${100 + shift[1]}" r="86" fill="url(#${id}s)"/>
-    <circle cx="100" cy="100" r="86" fill="#F7F8FC"/>
-    <circle cx="100" cy="100" r="66" fill="url(#${id}f)"/>
-    <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
-    <ellipse cx="76" cy="102" rx="30" ry="26" fill="#F4F7FF"/>
-    <ellipse cx="124" cy="102" rx="30" ry="26" fill="#F4F7FF"/>
-    <g transform="translate(74 104) rotate(-16)"><rect x="-13" y="-13" width="26" height="24" rx="4.5" fill="#08102E"/></g>
-    <g transform="translate(126 104) rotate(12)"><rect x="-13" y="-13" width="26" height="24" rx="4.5" fill="#08102E"/></g>`;
+  s.innerHTML = '<defs>'
+    + '<radialGradient id="' + id + 'f" cx="32%" cy="28%" r="78%"><stop offset="0%" stop-color="#8EB6FF"/><stop offset="46%" stop-color="#3E7BFF"/><stop offset="100%" stop-color="#2457EA"/></radialGradient>'
+    + '<linearGradient id="' + id + 's" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#D5D9E8"/></linearGradient>'
+    + '</defs>'
+    + '<ellipse cx="104" cy="172" rx="58" ry="10" fill="rgba(18,28,100,0.28)"/>'
+    + '<circle cx="' + (100 + shift[0]) + '" cy="' + (100 + shift[1]) + '" r="86" fill="url(#' + id + 's)"/>'
+    + '<circle cx="100" cy="100" r="86" fill="#F7F8FC"/>'
+    + '<circle cx="100" cy="100" r="66" fill="url(#' + id + 'f)"/>'
+    + '<circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>'
+    + '<ellipse cx="76" cy="102" rx="30" ry="26" fill="#F4F7FF"/>'
+    + '<ellipse cx="124" cy="102" rx="30" ry="26" fill="#F4F7FF"/>'
+    + '<g transform="translate(74 104) rotate(-16)"><rect x="-13" y="-13" width="26" height="24" rx="4.5" fill="#08102E"/></g>'
+    + '<g transform="translate(126 104) rotate(12)"><rect x="-13" y="-13" width="26" height="24" rx="4.5" fill="#08102E"/></g>';
   return s;
 }
 function card(width) {
   const s = width / 340, u = (n) => n * s;
-  const gain = POST.pnl >= 0 ? "rgb(52,209,122)" : "rgb(255,92,112)";
-  const root = el("div", `width:${width}px;background:#3F66F8;border-radius:${u(20)}px;box-shadow:0 22px 50px rgba(16,24,80,.35);font-family:${FONT};color:#fff`);
-  const dark = el("div", `background:#101114;border-radius:${u(20)}px;padding:${u(14)}px ${u(14)}px ${u(12)}px`);
-  const head = el("div", `display:flex;align-items:center;gap:${u(8)}px`);
+  const root = el("div", "width:" + width + "px;background:#3F66F8;border-radius:" + u(20) + "px;box-shadow:0 22px 50px rgba(16,24,80,.35);font-family:" + FONT + ";color:#fff");
+  const dark = el("div", "background:#101114;border-radius:" + u(20) + "px;padding:" + u(14) + "px " + u(14) + "px " + u(12) + "px");
+  const head = el("div", "display:flex;align-items:center;gap:" + u(8) + "px");
   head.appendChild(avatar(u(34)));
-  const who = el("div", `display:flex;align-items:center;gap:${u(6)}px;min-width:0;flex:1`);
-  who.appendChild(el("span", `font-weight:700;font-size:${u(14.5)}px;white-space:nowrap`, POST.name));
-  who.appendChild(el("span", `font-size:${u(10)}px;font-weight:600;color:rgb(198,202,210);background:rgb(38,40,48);border-radius:999px;padding:${u(2)}px ${u(6)}px`, POST.badge));
+  const who = el("div", "display:flex;align-items:baseline;gap:" + u(6) + "px;min-width:0;flex:1");
+  who.appendChild(el("span", "font-weight:700;font-size:" + u(14.5) + "px;white-space:nowrap", POST.name));
+  who.appendChild(el("span", "color:rgb(154,160,170);font-size:" + u(12) + "px;white-space:nowrap", POST.handle));
   head.appendChild(who);
-  head.appendChild(el("span", `color:rgb(154,160,170);font-size:${u(11)}px;white-space:nowrap`, POST.date));
+  head.appendChild(el("span", "color:rgb(154,160,170);font-size:" + u(11) + "px;white-space:nowrap", POST.date));
   dark.appendChild(head);
-  const quote = el("p", `margin:${u(10)}px 0 0;font-size:${u(13.5)}px;line-height:1.34;white-space:pre-wrap;color:rgb(242,243,245)`);
+  const quote = el("p", "margin:" + u(10) + "px 0 0;font-size:" + u(13.5) + "px;line-height:1.34;white-space:pre-wrap;color:rgb(242,243,245)");
   quote.appendChild(el("span", "color:rgb(130,136,148)", "\u201C "));
   quote.appendChild(document.createTextNode(POST.cardText));
   dark.appendChild(quote);
-  const box = el("div", `margin-top:${u(12)}px;background:#1A1C24;border-radius:${u(12)}px;border:1px solid rgba(255,255,255,.05);padding:${u(10)}px ${u(8)}px ${u(8)}px`);
-  const tok = el("div", `display:flex;justify-content:center;align-items:center;gap:${u(6)}px`);
-  tok.appendChild(el("span", `width:${u(16)}px;height:${u(16)}px;border-radius:50%;background:#2A2E3A;display:inline-flex;align-items:center;justify-content:center;font-size:${u(8)}px;font-weight:800`, POST.token[0]));
-  tok.appendChild(el("span", `font-weight:700;font-size:${u(13)}px;letter-spacing:.04em`, POST.token));
-  box.appendChild(tok);
-  const pnl = el("div", `display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:${u(8)}px;margin-top:${u(6)}px`);
-  pnl.appendChild(el("span", `color:${gain};font-weight:800;font-size:${u(16.5)}px;letter-spacing:-.03em`, signedMoney(POST.pnl)));
-  pnl.appendChild(el("span", `color:${gain};font-weight:700;font-size:${u(12)}px`, "(" + signedPct(POST.pnlPct) + ")"));
-  box.appendChild(pnl);
-  const grid = el("div", `display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:${u(10)}px`);
-  [["Invested", money(POST.invested)], ["Bought at", mcap(POST.bought)], ["Current", mcap(POST.current)]].forEach((col, i) => {
-    const cell = el("div", `text-align:center;padding:0 ${u(4)}px;` + (i ? "border-left:1px solid rgba(255,255,255,.08)" : ""));
-    cell.appendChild(el("div", `color:rgb(154,160,170);font-size:${u(10)}px;font-weight:500`, col[0]));
-    cell.appendChild(el("div", `color:#fff;font-size:${u(12)}px;font-weight:700;margin-top:${u(3)}px;white-space:nowrap`, col[1]));
-    grid.appendChild(cell);
+  const box = el("div", "margin-top:" + u(12) + "px;background:#1A1C24;border-radius:" + u(12) + "px;border:1px solid rgba(255,255,255,.05);display:grid;grid-template-columns:repeat(4,1fr);padding:" + u(10) + "px " + u(4) + "px");
+  [["reply", POST.replies], ["repost", POST.reposts], ["like", POST.likes], ["views", POST.views]].forEach((col, i) => {
+    const cell = el("div", "display:flex;flex-direction:column;align-items:center;gap:" + u(4) + "px;color:#fff;" + (i ? "border-left:1px solid rgba(255,255,255,.08)" : ""));
+    cell.appendChild(iconSvg(col[0], u(16), "#9AA0AA"));
+    cell.appendChild(el("span", "font-size:" + u(12) + "px;font-weight:700", compact(col[1])));
+    box.appendChild(cell);
   });
-  box.appendChild(grid);
   dark.appendChild(box);
   root.appendChild(dark);
-  const foot = el("div", `display:flex;justify-content:space-between;align-items:center;padding:${u(8)}px ${u(14)}px ${u(10)}px`);
-  foot.appendChild(el("span", `font-family:${DISPLAY};font-weight:800;font-size:${u(22)}px;letter-spacing:-.05em;line-height:1`, "amity"));
-  const promo = el("div", `text-align:right;font-size:${u(10)}px;line-height:1.25;color:rgba(255,255,255,.92)`);
+  const foot = el("div", "display:flex;justify-content:space-between;align-items:center;padding:" + u(8) + "px " + u(14) + "px " + u(10) + "px");
+  foot.appendChild(el("span", "font-family:" + DISPLAY + ";font-weight:800;font-size:" + u(22) + "px;letter-spacing:-.05em;line-height:1", "amity"));
+  const promo = el("div", "text-align:right;font-size:" + u(10) + "px;line-height:1.25;color:rgba(255,255,255,.92)");
   promo.appendChild(el("div", "", "10% off fees with code"));
-  promo.appendChild(el("div", `font-family:${DISPLAY};font-weight:800;font-size:${u(12)}px`, "amity"));
+  promo.appendChild(el("div", "font-family:" + DISPLAY + ";font-weight:800;font-size:" + u(12) + "px", "amity"));
   foot.appendChild(promo);
   root.appendChild(foot);
   return root;
 }
 let seq = 0;
-function canvas(mode) {
+function stage(mode) {
   const f = FRAMES[mode];
   const id = "g" + (++seq);
-  const root = el("div", `width:${f.w}px;height:${f.h}px;position:relative;overflow:hidden;background:#4F69F2;font-family:${FONT}`);
+  const root = el("div", "width:" + f.w + "px;height:" + f.h + "px;position:relative;overflow:hidden;background:#4F69F2;font-family:" + FONT);
   const bg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   bg.setAttribute("width", f.w); bg.setAttribute("height", f.h);
   bg.setAttribute("style", "position:absolute;inset:0");
-  bg.innerHTML = `<defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F69F2"/><stop offset="40%" stop-color="#7C8EF8"/><stop offset="100%" stop-color="#99A3E0"/></linearGradient></defs><rect width="${f.w}" height="${f.h}" fill="url(#${id})"/>`;
+  bg.innerHTML = '<defs><linearGradient id="' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F69F2"/><stop offset="40%" stop-color="#7C8EF8"/><stop offset="100%" stop-color="#99A3E0"/></linearGradient></defs><rect width="' + f.w + '" height="' + f.h + '" fill="url(#' + id + ')"/>';
   root.appendChild(bg);
   (mode === "landscape" ? LAND : PORT).forEach((c, i) => {
-    const d = el("div", `position:absolute;left:${c.x}px;top:${c.y}px;z-index:1`);
+    const d = el("div", "position:absolute;left:" + c.x + "px;top:" + c.y + "px;z-index:1");
     d.appendChild(coin(c.size, c.rotate, c.rim, id + "c" + i));
     root.appendChild(d);
   });
@@ -204,10 +210,185 @@ function mini(mode, host) {
   const f = FRAMES[mode];
   const boxW = mode === "landscape" ? 210 : 118;
   const boxH = mode === "landscape" ? 118 : 148;
-  host.style.cssText = `width:${boxW}px;height:${boxH}px;overflow:hidden;position:relative;border-radius:12px;pointer-events:none`;
-  const inner = el("div", `position:absolute;left:0;top:0;width:${f.w}px;height:${f.h}px;transform:scale(${boxW / f.w});transform-origin:top left`);
-  inner.appendChild(canvas(mode));
+  host.style.cssText = "width:" + boxW + "px;height:" + boxH + "px;overflow:hidden;position:relative;border-radius:12px;pointer-events:none";
+  const inner = el("div", "position:absolute;left:0;top:0;width:" + f.w + "px;height:" + f.h + "px;transform:scale(" + (boxW / f.w) + ");transform-origin:top left");
+  inner.appendChild(stage(mode));
   host.appendChild(inner);
+}
+function roundRect(ctx, x, y, w, h, r) {
+  const rr = Math.max(0, Math.min(r, w / 2, h / 2));
+  ctx.beginPath();
+  ctx.moveTo(x + rr, y);
+  ctx.arcTo(x + w, y, x + w, y + h, rr);
+  ctx.arcTo(x + w, y + h, x, y + h, rr);
+  ctx.arcTo(x, y + h, x, y, rr);
+  ctx.arcTo(x, y, x + w, y, rr);
+  ctx.closePath();
+}
+function drawAvatar(ctx, x, y, size) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.scale(size / 64, size / 64);
+  ctx.beginPath(); ctx.arc(32, 32, 32, 0, Math.PI * 2); ctx.fillStyle = "#F5C518"; ctx.fill();
+  ctx.beginPath(); ctx.ellipse(32, 16, 22, 12, 0, 0, Math.PI * 2); ctx.fillStyle = "#E09A00"; ctx.fill();
+  ctx.beginPath(); ctx.arc(32, 36, 16, 0, 0, Math.PI * 2); ctx.fillStyle = "#F6D35A"; ctx.fill();
+  ctx.fillStyle = "#161616";
+  ctx.beginPath(); ctx.arc(26, 35, 2.4, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(38, 35, 2.4, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.strokeStyle = "#161616"; ctx.lineWidth = 1.8; ctx.lineCap = "round";
+  ctx.moveTo(27, 43); ctx.quadraticCurveTo(32, 49, 37, 43); ctx.stroke();
+  ctx.restore();
+}
+function drawCoin(ctx, c) {
+  const shift = { bl: [-9, 10], br: [9, 10], tl: [-8, -8], tr: [9, -7] }[c.rim];
+  ctx.save();
+  ctx.translate(c.x + c.size / 2, c.y + c.size / 2);
+  ctx.rotate(c.rotate * Math.PI / 180);
+  ctx.scale(c.size / 200, c.size / 200);
+  ctx.translate(-100, -100);
+  ctx.beginPath(); ctx.ellipse(104, 172, 58, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(18,28,100,0.28)"; ctx.fill();
+  const rim = ctx.createLinearGradient(0, 0, 200, 200);
+  rim.addColorStop(0, "#FFFFFF"); rim.addColorStop(1, "#D5D9E8");
+  ctx.beginPath(); ctx.arc(100 + shift[0], 100 + shift[1], 86, 0, Math.PI * 2); ctx.fillStyle = rim; ctx.fill();
+  ctx.beginPath(); ctx.arc(100, 100, 86, 0, Math.PI * 2); ctx.fillStyle = "#F7F8FC"; ctx.fill();
+  const face = ctx.createRadialGradient(64, 56, 8, 100, 100, 120);
+  face.addColorStop(0, "#8EB6FF"); face.addColorStop(0.46, "#3E7BFF"); face.addColorStop(1, "#2457EA");
+  ctx.beginPath(); ctx.arc(100, 100, 66, 0, Math.PI * 2); ctx.fillStyle = face; ctx.fill();
+  ctx.beginPath(); ctx.arc(100, 100, 76, 0, Math.PI * 2); ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle = "#F4F7FF";
+  ctx.beginPath(); ctx.ellipse(76, 102, 30, 26, 0, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(124, 102, 30, 26, 0, 0, Math.PI * 2); ctx.fill();
+  [[74, -16], [126, 12]].forEach((p) => {
+    ctx.save();
+    ctx.translate(p[0], 104);
+    ctx.rotate(p[1] * Math.PI / 180);
+    roundRect(ctx, -13, -13, 26, 24, 4.5);
+    ctx.fillStyle = "#08102E";
+    ctx.fill();
+    ctx.restore();
+  });
+  ctx.restore();
+}
+function strokeIcon(ctx, name, x, y, size, color) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.scale(size / 24, size / 24);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 1.8;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.stroke(new Path2D(ICONS[name]));
+  ctx.restore();
+}
+function paintPng(mode) {
+  const f = FRAMES[mode];
+  const scale = 2;
+  const cnv = document.createElement("canvas");
+  cnv.width = f.w * scale;
+  cnv.height = f.h * scale;
+  const ctx = cnv.getContext("2d");
+  ctx.scale(scale, scale);
+  const g = ctx.createLinearGradient(0, 0, 0, f.h);
+  g.addColorStop(0, "#4F69F2");
+  g.addColorStop(0.4, "#7C8EF8");
+  g.addColorStop(1, "#99A3E0");
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, f.w, f.h);
+  (mode === "landscape" ? LAND : PORT).forEach((c) => drawCoin(ctx, c));
+  const W = f.card;
+  const s = W / 340;
+  const u = (n) => n * s;
+  const lines = POST.cardText.split("\n");
+  const fs = u(13.5);
+  const lh = fs * 1.34;
+  const pad = u(14);
+  const av = u(34);
+  const bodyTop = pad + av + u(10);
+  const statsGap = u(12);
+  const statsH = u(56);
+  const darkH = bodyTop + lines.length * lh + statsGap + statsH + u(12);
+  const footH = u(42);
+  const cardH = darkH + footH;
+  const x0 = (f.w - W) / 2;
+  const y0 = (f.h - cardH) / 2;
+  ctx.save();
+  ctx.translate(x0, y0);
+  roundRect(ctx, 0, 0, W, cardH, u(20));
+  ctx.fillStyle = "#3F66F8";
+  ctx.fill();
+  roundRect(ctx, 0, 0, W, darkH, u(20));
+  ctx.fillStyle = "#101114";
+  ctx.fill();
+  drawAvatar(ctx, pad, pad, av);
+  ctx.textBaseline = "alphabetic";
+  ctx.fillStyle = "#fff";
+  ctx.font = "700 " + u(14.5) + "px " + FONT;
+  const nameX = pad + av + u(8);
+  const nameY = pad + u(22);
+  ctx.fillText(POST.name, nameX, nameY);
+  const nameW = ctx.measureText(POST.name).width;
+  ctx.fillStyle = "#9AA0AA";
+  ctx.font = "500 " + u(12) + "px " + FONT;
+  ctx.fillText(POST.handle, nameX + nameW + u(8), nameY);
+  ctx.font = "500 " + u(11) + "px " + FONT;
+  ctx.textAlign = "right";
+  ctx.fillText(POST.date, W - pad, nameY);
+  ctx.textAlign = "left";
+  lines.forEach((line, i) => {
+    const y = bodyTop + fs + i * lh;
+    let x = pad;
+    ctx.font = "400 " + fs + "px " + FONT;
+    if (i === 0) {
+      ctx.fillStyle = "#828894";
+      const q = "\u201C ";
+      ctx.fillText(q, x, y);
+      x += ctx.measureText(q).width;
+    }
+    ctx.fillStyle = "#F2F3F5";
+    ctx.fillText(line, x, y);
+  });
+  const statsY = bodyTop + lines.length * lh + statsGap;
+  roundRect(ctx, pad, statsY, W - pad * 2, statsH, u(12));
+  ctx.fillStyle = "#1A1C24";
+  ctx.fill();
+  ctx.strokeStyle = "rgba(255,255,255,0.05)";
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  const metrics = [["reply", POST.replies], ["repost", POST.reposts], ["like", POST.likes], ["views", POST.views]];
+  const colW = (W - pad * 2) / 4;
+  metrics.forEach((m, i) => {
+    const cx = pad + colW * i + colW / 2;
+    const icon = u(16);
+    if (i) {
+      ctx.beginPath();
+      ctx.moveTo(pad + colW * i, statsY + u(10));
+      ctx.lineTo(pad + colW * i, statsY + statsH - u(10));
+      ctx.strokeStyle = "rgba(255,255,255,0.08)";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+    strokeIcon(ctx, m[0], cx - icon / 2, statsY + u(8), icon, "#9AA0AA");
+    ctx.fillStyle = "#fff";
+    ctx.font = "700 " + u(12) + "px " + FONT;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
+    ctx.fillText(compact(m[1]), cx, statsY + u(44));
+    ctx.textAlign = "left";
+  });
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#fff";
+  ctx.font = "800 " + u(22) + "px " + DISPLAY;
+  ctx.fillText("amity", pad, darkH + footH * 0.52);
+  ctx.textAlign = "right";
+  ctx.font = "500 " + u(10) + "px " + FONT;
+  ctx.fillStyle = "rgba(255,255,255,0.92)";
+  ctx.fillText("10% off fees with code", W - pad, darkH + u(16));
+  ctx.font = "800 " + u(12) + "px " + DISPLAY;
+  ctx.fillStyle = "#fff";
+  ctx.fillText("amity", W - pad, darkH + u(32));
+  ctx.restore();
+  return cnv.toDataURL("image/png");
 }
 document.getElementById("avatar").appendChild(avatar(40));
 mini("landscape", document.getElementById("miniL"));
@@ -221,14 +402,14 @@ let mode = "landscape";
 let png = "";
 let y = 480, v = 0, target = 0, drag = null, raf = 0;
 
-function tick(now) {
+function tick() {
   if (!sheet.hidden) {
     if (!drag) {
       const dt = 0.016;
       const a = -280 * (y - target) - 22 * v;
       v += a * dt; y += v * dt;
     }
-    panel.style.transform = `translate3d(-50%, ${Math.max(y, -16)}px, 0)`;
+    panel.style.transform = "translate3d(-50%, " + Math.max(y, -16) + "px, 0)";
     if (!drag && target > 0 && y > panel.offsetHeight * 0.92) { sheet.hidden = true; cancelAnimationFrame(raf); return; }
   }
   raf = requestAnimationFrame(tick);
@@ -244,132 +425,24 @@ document.getElementById("grip").onpointerdown = (e) => { drag = e.clientY; e.cur
 document.getElementById("grip").onpointermove = (e) => { if (drag == null) return; const dy = e.clientY - drag; drag = e.clientY; v = dy / 0.016; y = Math.max(-12, y + dy); };
 document.getElementById("grip").onpointerup = () => { drag = null; target = y > 140 || v > 800 ? 900 : 0; };
 
-function fontCSS() {
-  const css = document.getElementById("faces").textContent;
-  const idx = css.indexOf("*{box-sizing");
-  return idx > 0 ? css.slice(0, idx) : "";
-}
-function esc(s) { return String(s).replace(/&/g, "&"+"amp;").replace(/</g, "&"+"lt;"); }
-function coinInner(id, rim) {
-  const shift = { bl: [-9, 10], br: [9, 10], tl: [-8, -8], tr: [9, -7] }[rim];
-  return `<defs>
-    <radialGradient id="${id}f" cx="32%" cy="28%" r="78%"><stop offset="0%" stop-color="#8EB6FF"/><stop offset="46%" stop-color="#3E7BFF"/><stop offset="100%" stop-color="#2457EA"/></radialGradient>
-    <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#D5D9E8"/></linearGradient>
-  </defs>
-  <ellipse cx="104" cy="172" rx="58" ry="10" fill="rgba(18,28,100,0.28)"/>
-  <circle cx="${100 + shift[0]}" cy="${100 + shift[1]}" r="86" fill="url(#${id}s)"/>
-  <circle cx="100" cy="100" r="86" fill="#F7F8FC"/>
-  <circle cx="100" cy="100" r="66" fill="url(#${id}f)"/>
-  <circle cx="100" cy="100" r="76" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
-  <ellipse cx="76" cy="102" rx="30" ry="26" fill="#F4F7FF"/>
-  <ellipse cx="124" cy="102" rx="30" ry="26" fill="#F4F7FF"/>
-  <g transform="translate(74 104) rotate(-16)"><rect x="-13" y="-13" width="26" height="24" rx="4.5" fill="#08102E"/></g>
-  <g transform="translate(126 104) rotate(12)"><rect x="-13" y="-13" width="26" height="24" rx="4.5" fill="#08102E"/></g>`;
-}
-function stageSVG(mode) {
-  const f = FRAMES[mode];
-  const W = f.card;
-  const s = W / 340;
-  const u = (n) => Math.round(n * s * 10) / 10;
-  const lines = POST.cardText.split("\n");
-  const fs = u(13.5);
-  const lh = fs * 1.34;
-  const pad = u(14);
-  const av = u(34);
-  const bodyTop = pad + av + u(10);
-  const statsGap = u(12);
-  const statsH = u(92);
-  const darkH = bodyTop + lines.length * lh + statsGap + statsH + u(12);
-  const footH = u(42);
-  const cardH = darkH + footH;
-  const x0 = (f.w - W) / 2;
-  const y0 = (f.h - cardH) / 2;
-  const gain = POST.pnl >= 0 ? "#34D17A" : "#FF5C70";
-  const coins = (mode === "landscape" ? LAND : PORT).map((c, i) => {
-    const sc = c.size / 200;
-    return `<g transform="translate(${c.x} ${c.y}) scale(${sc}) rotate(${c.rotate} 100 100)">${coinInner(mode[0] + i, c.rim)}</g>`;
-  }).join("");
-  const body = lines.map((line, i) => `<text x="${pad}" y="${bodyTop + fs + i * lh}" font-family="Inter, Inter, sans-serif" font-size="${fs}" fill="#F2F3F5">${i === 0 ? '<tspan fill="#828894">\u201C </tspan>' : ""}${esc(line)}</text>`).join("");
-  const statsY = bodyTop + lines.length * lh + statsGap;
-  const cols = [["Invested", money(POST.invested)], ["Bought at", mcap(POST.bought)], ["Current", mcap(POST.current)]];
-  const inner = W - pad * 2;
-  const colW = inner / 3;
-  const colText = cols.map((col, i) => {
-    const cx = pad + colW * i + colW / 2;
-    return `<text x="${cx}" y="${statsY + u(62)}" text-anchor="middle" font-family="Inter, Inter, sans-serif" font-size="${u(10)}" fill="#9AA0AA">${col[0]}</text>
-      <text x="${cx}" y="${statsY + u(78)}" text-anchor="middle" font-family="Inter, Inter, sans-serif" font-size="${u(12)}" font-weight="700" fill="#fff">${esc(col[1])}</text>
-      ${i ? `<line x1="${pad + colW * i}" y1="${statsY + u(52)}" x2="${pad + colW * i}" y2="${statsY + u(82)}" stroke="rgba(255,255,255,0.08)"/>` : ""}`;
-  }).join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${f.w}" height="${f.h}">
-    <defs><style>${fontCSS()}</style>
-      <linearGradient id="bg${mode}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F69F2"/><stop offset="40%" stop-color="#7C8EF8"/><stop offset="100%" stop-color="#99A3E0"/></linearGradient>
-    </defs>
-    <rect width="${f.w}" height="${f.h}" fill="url(#bg${mode})"/>
-    ${coins}
-    <g transform="translate(${x0} ${y0})">
-      <rect width="${W}" height="${cardH}" rx="${u(20)}" fill="#3F66F8"/>
-      <rect width="${W}" height="${darkH}" rx="${u(20)}" fill="#101114"/>
-      <g transform="translate(${pad} ${pad}) scale(${av / 64})">
-        <circle cx="32" cy="32" r="32" fill="#F5C518"/>
-        <ellipse cx="32" cy="16" rx="22" ry="12" fill="#E09A00"/>
-        <circle cx="32" cy="36" r="16" fill="#F6D35A"/>
-        <circle cx="26" cy="35" r="2.4" fill="#161616"/>
-        <circle cx="38" cy="35" r="2.4" fill="#161616"/>
-        <path d="M27 43c2 3 8 3 10 0" stroke="#161616" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-      </g>
-      <text x="${pad + av + u(8)}" y="${pad + u(16)}" font-family="Inter, Inter, sans-serif" font-size="${u(14.5)}" font-weight="700" fill="#fff">${esc(POST.name)}</text>
-      <rect x="${pad + av + u(8) + u(62)}" y="${pad + u(4)}" width="${u(46)}" height="${u(16)}" rx="${u(8)}" fill="#262830"/>
-      <text x="${pad + av + u(8) + u(85)}" y="${pad + u(15.5)}" text-anchor="middle" font-family="Inter, Inter, sans-serif" font-size="${u(10)}" font-weight="600" fill="#C6CAD2">${esc(POST.badge)}</text>
-      <text x="${W - pad}" y="${pad + u(16)}" text-anchor="end" font-family="Inter, Inter, sans-serif" font-size="${u(11)}" fill="#9AA0AA">${esc(POST.date)}</text>
-      ${body}
-      <rect x="${pad}" y="${statsY}" width="${inner}" height="${statsH}" rx="${u(12)}" fill="#1A1C24" stroke="rgba(255,255,255,0.05)"/>
-      <circle cx="${W / 2 - u(28)}" cy="${statsY + u(16)}" r="${u(8)}" fill="#2A2E3A"/>
-      <text x="${W / 2 - u(28)}" y="${statsY + u(19)}" text-anchor="middle" font-family="Inter, Inter, sans-serif" font-size="${u(8)}" font-weight="800" fill="#fff">${POST.token[0]}</text>
-      <text x="${W / 2 - u(12)}" y="${statsY + u(20)}" font-family="Inter, Inter, sans-serif" font-size="${u(13)}" font-weight="700" fill="#fff">${esc(POST.token)}</text>
-      <text x="${W / 2}" y="${statsY + u(44)}" text-anchor="middle" font-family="Inter, Inter, sans-serif" font-size="${u(16.5)}" font-weight="800" fill="${gain}">${esc(signedMoney(POST.pnl))}  <tspan font-size="${u(12)}" font-weight="700">(${esc(signedPct(POST.pnlPct))})</tspan></text>
-      ${colText}
-      <text x="${pad}" y="${darkH + u(27)}" font-family="Outfit, Outfit, sans-serif" font-size="${u(22)}" font-weight="800" fill="#fff">amity</text>
-      <text x="${W - pad}" y="${darkH + u(18)}" text-anchor="end" font-family="Inter, Inter, sans-serif" font-size="${u(10)}" fill="rgba(255,255,255,0.92)">10% off fees with code</text>
-      <text x="${W - pad}" y="${darkH + u(32)}" text-anchor="end" font-family="Outfit, Outfit, sans-serif" font-size="${u(12)}" font-weight="800" fill="#fff">amity</text>
-    </g>
-  </svg>`;
-}
-function svgToPng(svg, w, h) {
-  const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml;charset=utf-8" }));
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => {
-      const c = document.createElement("canvas");
-      c.width = w * 2; c.height = h * 2;
-      const ctx = c.getContext("2d");
-      ctx.scale(2, 2);
-      ctx.drawImage(img, 0, 0, w, h);
-      URL.revokeObjectURL(url);
-      try { resolve(c.toDataURL("image/png")); }
-      catch (e) { reject(e); }
-    };
-    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("render")); };
-    img.src = url;
-  });
-}
 async function show(next) {
   mode = next;
   sheet.hidden = true;
   viewer.hidden = false;
   document.getElementById("modeLabel").textContent = mode === "landscape" ? "Landscape" : "Portrait";
   shot.className = mode === "portrait" ? "port" : "";
-  shot.removeAttribute("src");
   shot.alt = "Rendering image";
-  const f = FRAMES[mode];
   try {
-    png = await svgToPng(stageSVG(mode), f.w, f.h);
+    if (document.fonts && document.fonts.ready) {
+      await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 1500))]);
+    }
+    png = paintPng(mode);
     shot.src = png;
     shot.alt = "amity share card";
-    window.__err = "";
   } catch (e) {
+    shot.removeAttribute("src");
     shot.alt = "Could not render image";
     png = "";
-    window.__err = String(e);
   }
 }
 document.getElementById("pickLand").onclick = () => show("landscape");
